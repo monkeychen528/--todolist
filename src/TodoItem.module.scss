@@ -1,0 +1,95 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.list {
+  display: grid;
+  grid-template-columns: 20px 1fr auto 40px;
+  align-items: center;
+  column-gap: 16px;
+  padding: 6px;
+  &__titleWrap {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    cursor: pointer;
+    &:hover:not(.list__titleComplete) {
+      .list__title p::after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 16px;
+        height: 16px;
+        background: url(./assets/edit.svg) no-repeat;
+        opacity: 0.8;
+      }
+    }
+  }
+  &__titleComplete {
+    text-decoration: line-through;
+    color: #ccc;
+    pointer-events: none;
+  }
+
+  &__titleEdit {
+    padding: 6px;
+    flex-grow: 1;
+    &__submit {
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    width: 100%;
+
+    p {
+      width: fit-content;
+      padding-right: 20px;
+      position: relative;
+      word-break: break-word;
+    }
+  }
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgb(128, 128, 128);
+  background: none;
+  transition: 0.3s;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:checked {
+    background: url(./assets/check.svg) no-repeat;
+    background-size: cover;
+  }
+
+  &:hover {
+    border-color: rgb(16, 16, 16);
+  }
+}
+
+.checkDisabled {
+  cursor: not-allowed;
+}
+
+.delete {
+  width: 20px;
+  height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: red;
+  }
+}

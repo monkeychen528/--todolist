@@ -1,0 +1,63 @@
+.todo-app {
+  max-width: 980px;
+  margin: 16px auto 0;
+  padding: 16px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  &__filter {
+    height: 36px;
+    cursor: pointer;
+    transition: 0.4s;
+    border: 1px solid rgba(150, 150, 150);
+
+    &:hover {
+      border: 1px solid rgba(64, 64, 64, 1);
+      border-radius: 6px;
+    }
+  }
+
+  &__input {
+    height: 36px;
+    min-width: 200px;
+    margin: 0 auto;
+    font-size: 22px;
+    &::placeholder {
+      font-size: 18px;
+    }
+  }
+
+  &__submit {
+    padding: 3px 24px 3px 8px;
+    position: relative;
+    border: 1px solid rgba(64, 64, 64, 0.7);
+    transition: 0.3s;
+    background-color: transparent;
+    cursor: pointer;
+    &::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 3px;
+      top: 50%;
+      transform: translate(0, -50%);
+      background: url(./assets/send.svg) no-repeat;
+    }
+    &:hover {
+      background-color: rgb(220, 220, 220);
+    }
+  }
+}
+
+.content {
+  margin: 12px auto 0;
+}
+
+.listWrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
