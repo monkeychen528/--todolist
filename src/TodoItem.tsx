@@ -33,7 +33,7 @@ const TodoLi = ({ obj, handleEdit, handleDelete }: TodoItemProp) => {
       <input
         name="complete"
         className={clsx(styles.check, isSelect && !obj.isCompleted && styles.checkDisabled)}
-        type="radio"
+        type="checkbox"
         checked={obj.isCompleted}
         onClick={() =>!isSelect && handleEdit(obj.id, { isCompleted: !obj.isCompleted })}
         onChange={() => void 0}
